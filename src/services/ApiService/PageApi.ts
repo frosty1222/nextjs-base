@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const api = axios.create({
   baseURL: 'https://api.example.com',
@@ -6,7 +7,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
-
+const router = useRouter();
 api.interceptors.request.use(
     (config) => {
       const token = localStorage.getItem('token');
