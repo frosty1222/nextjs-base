@@ -19,15 +19,24 @@ export const GET_MENU = gql`
                   title
                   url
                   label
+                  description
+                  megaMenu {
+                    icon {
+                      node {
+                        altText
+                        mediaItemUrl
+                        mediaDetails {
+                          height
+                          width
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           }
         }
-      }
-      nodes {
-        name
-        slug
       }
     }
   }

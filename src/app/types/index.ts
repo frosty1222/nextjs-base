@@ -3,9 +3,23 @@ export interface MenuItem {
     title: string;
     path: string;
     label: string;
+    description:string,
+    icon:{},
     childItems?: {
       nodes: MenuItem[];
-    };
+    },
+    megaMenu?:{
+      icon?: {
+        node?: {
+          mediaItemUrl: string;
+          altText:string,
+          mediaDetails?:{
+            height:number
+            width:number
+          }
+        }
+      }
+    }
   }
   
   export interface MenuNode {
