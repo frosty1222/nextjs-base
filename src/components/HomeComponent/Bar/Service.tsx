@@ -1,10 +1,8 @@
 'use client'
 import { MenuData } from "@/app/types";
 import Image from "next/image";
-import CareImage from '../../../../public/assets/images/care.png'
 import { useEffect, useState } from "react";
-import { ServiceStartedContainer } from "./BarStyle";
-import { BsArrowRightShort } from "react-icons/bs";
+import ExploreContent from "./ExploreContent";
 // Define a proper type for nodes if possible
 interface ChildNode {
   url: string;
@@ -31,15 +29,6 @@ interface ChildProps {
 }
 
 const Service = ({ nodes, label, menuData }: ChildProps) => {
-    const [collectMenuStarted,setCollectMenuStarted] = useState<any[]>([]);
-    useEffect(()=>{
-        menuData.edges.map((e:any)=>{
-            if(e.node.name === "Menu Started"){
-                setCollectMenuStarted(e.node.menuItems.nodes);
-                console.log("collectMenuStarted",collectMenuStarted)
-            }
-        })
-    },[menuData.edges])
   return (
     <>
       {nodes?.map((child, childIndex) => (
@@ -64,29 +53,7 @@ const Service = ({ nodes, label, menuData }: ChildProps) => {
           </div>
         </div>
       ))}
-      {
-    collectMenuStarted.length > 0 && (
-        <ServiceStartedContainer>
-            <div className="image-section">
-                <Image src={CareImage} alt="started image" />
-                <div className="button-section">
-                    <button><a className="button" href="">Discover more</a></button>
-                    <BsArrowRightShort className="bs-arrow-right" />
-                </div>
-            </div>
-            <div className="heading">
-                <h1 className="heading-line">READY TO GET STARTED</h1>
-            </div>
-            <ul className="list-care">
-                {collectMenuStarted.map((e: any, index: number) => (
-                <li key={index}>
-                    <a href={e.url}>{e.label}</a>
-                </li>
-                ))}
-            </ul>
-    </ServiceStartedContainer>
-  )
-}
+     <ExploreContent menuData={menuData}/>
     </>
   );
 };

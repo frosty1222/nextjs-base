@@ -9,10 +9,25 @@ export const ServiceStartedContainer = styled.div`
         background-color: #fff;
         .image-section{
             position: relative;
+            img{
+                width: 100%;
+            }
+            .explore-text{
+                position: absolute;
+                font-size: 16px;
+                line-height: 32px;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                max-width: 86px;
+                padding-left: 0px;
+                padding-bottom: 18px;
+                left: 10%;
+                top:10%;
+            }
             .button-section{
                 position: absolute;
                 top:65%;
-                left: 10px;
+                left: 5%;
                 width: 100px;
                 padding: 3px 5px 3px 4px;
                 display: flex;
@@ -63,6 +78,9 @@ export const ServiceStartedContainer = styled.div`
                 color: #B4B4B4;
                 border-bottom: 1px solid #D4D4D4;
                 padding: 12px 0;
+                a{
+                    color: #000;
+                }
             }
         }
     }

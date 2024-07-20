@@ -37,9 +37,6 @@ const Header = ({ menuData }: HeaderProps) => {
     let status = false;
     setAppearance(status)
   }, [])
- 
-  console.log("menuData", menuData);
-
   const renderChildView = (label: string,nodes:any,menuData: MenuData) => {
     switch (label) {
       case 'Services':

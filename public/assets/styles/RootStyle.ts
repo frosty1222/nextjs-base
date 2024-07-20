@@ -148,7 +148,7 @@ export const HeaderContainer = styled.header<ControlIcon>`
                       .dropdown-item{
                         border: none;
                         text-decoration: unset;
-                        font-weight: 800;
+                        font-weight: 700;
                         color:#000;
                       }
                   }
@@ -157,6 +157,16 @@ export const HeaderContainer = styled.header<ControlIcon>`
                   color: #B4B4B4;
                   line-height: 20px;
                   padding: 21px 0 0;
+                  word-break: break-all;
+                }
+                .list-tech{
+                  padding: 21px 0 0;
+                  li{
+                    list-style: none;
+                    color: #000;
+                    padding: 0px 0 19px;
+                    font-weight: 600;
+                  }
                 }
               }
             }
