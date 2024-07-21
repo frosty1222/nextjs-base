@@ -105,7 +105,7 @@ export const HeaderContainer = styled.header<ControlIcon>`
                   color: #000;
                   position: absolute;
                   right: 15px;
-                  top: 0px;
+                  top: 11px;
                 }
               .bs-chevrup{
                 width: 20px;
@@ -115,7 +115,7 @@ export const HeaderContainer = styled.header<ControlIcon>`
                 color: #000;
                 position: absolute;
                 right: 15px;
-                top: 0px;
+                top: 11px;
               }
             }
             .icon-dropdown{

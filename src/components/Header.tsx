@@ -43,7 +43,7 @@ const Header = ({ menuData }: HeaderProps) => {
         return <Service nodes={nodes} label={label} menuData={menuData} />
       case 'Technology':
         return <Technology  nodes={nodes} label={label} menuData={menuData} />
-      case 'Oursourcing':
+      case 'Outsourcing':
         return <Oursource  nodes={nodes} label={label} menuData={menuData} />
       default:
         return ""
@@ -82,10 +82,10 @@ const Header = ({ menuData }: HeaderProps) => {
                   <span>{item.label}</span>
                 </a>
                 {item.childItems.nodes.length > 0 && (
-                    <>{!extendChild ? (
-                      <BsChevronDown className="bs-chevrdown" onClick={()=>toggleDropDown(true,item.label)}/>
-                    ):(
+                    <>{extendChild && extendLabel === item.label ? (
                       <BsChevronUp className="bs-chevrup" onClick={()=>toggleDropDown(false,item.label)} />
+                    ):(
+                      <BsChevronDown className="bs-chevrdown" onClick={()=>toggleDropDown(true,item.label)}/>
                     )}</>
                   )}
                   {extendChild && extendLabel === item.label && (

@@ -3,6 +3,7 @@ import { MenuData } from "@/app/types";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ExploreContent from "./ExploreContent";
+import HeadSection from "./HeadSection";
 // Define a proper type for nodes if possible
 interface ChildNode {
   url: string;
@@ -33,24 +34,7 @@ const Service = ({ nodes, label, menuData }: ChildProps) => {
     <>
       {nodes?.map((child, childIndex) => (
         <div className="icon-drop-section" key={childIndex}>
-          <div className="head">
-            <div className="icon">
-              <Image
-                src={child?.megaMenu?.icon?.node?.mediaItemUrl || ""}
-                alt={child?.megaMenu?.icon?.node?.altText || ""}
-                height={child?.megaMenu?.icon?.node?.mediaDetails?.height || 0}
-                width={child?.megaMenu?.icon?.node?.mediaDetails?.width || 0}
-              />
-            </div>
-            <div className="label">
-              <a href={child.url} className="dropdown-item">
-                {child.label}
-              </a>
-            </div>
-          </div>
-          <div className="content">
-            {child.description ?? "Default text for testing on local"}
-          </div>
+            <HeadSection  child={child} isContent={true}/>
         </div>
       ))}
      <ExploreContent menuData={menuData}/>
